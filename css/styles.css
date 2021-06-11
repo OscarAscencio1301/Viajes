@@ -1,0 +1,322 @@
+:root {
+    --fuente-principal: 'Lato', sans-serif;
+    --primario: #da595e;
+    --secundario: #484848;
+    --blanco: #fff;
+    --hospedaje: #275154;
+    --concierto: #da595e;
+    --clase: #598dda;
+    --paseo: #940ad4;
+}
+
+body {
+    font-family: var(--fuente-principal);
+}
+
+html {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2.6rem;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+
+/* Interfaz */
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero {
+    background-image: url("../img/arriba.jpg");
+    height: 100vh;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+.contenido-hero {
+    display: grid;
+    grid-template-columns: 5% auto 5%;
+    grid-template-rows: max-content auto;
+    text-align: center;
+}
+
+.contenido-hero .titulo {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    color: var(--blanco)
+}
+
+.contenido-hero .formulario {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    position: relative;
+    display: flex;
+    height: 3rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+.formulario #busq {
+    flex: 1;
+    border: none;
+    border-radius: 20px;
+    background-image: url(../img/lupa.png);
+    background-repeat: no-repeat;
+    background-position: calc(1% + 1rem);
+    padding-left: 5rem;
+    outline: none;
+    font-size: 1.6rem;
+}
+
+.formulario .boton {
+    position: absolute;
+    right: 3%;
+    top: 10%;
+    padding: 0.5rem 1.4rem;
+    background-color: var(--primario);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.formulario .boton:hover {
+    transform: scale(1.05);
+}
+
+
+/* Que hacer */
+
+.hospedaje {
+    color: var(--hospedaje);
+}
+
+.concierto {
+    color: var(--concierto);
+}
+
+.recorrido {
+    color: var(--paseo);
+}
+
+.clase {
+    color: var(--clase);
+}
+
+.contenedor-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    text-align: center;
+}
+
+.info .categoria {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.info .titulocat {
+    font-weight: 900;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.info .precio {
+    font-size: 0.8rem;
+    color: var(--secundario);
+}
+
+
+/* Premium */
+
+.premium {
+    background-image: url(../img/hospedaje-pro.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center right;
+    height: 25rem;
+    background-size: cover;
+    grid-template-columns: unset;
+}
+
+@media (min-width: 700px) {
+    .premium {
+        grid-template-columns: auto 30%;
+    }
+    .premium .info {
+        grid-column: 2/3;
+    }
+}
+
+.premium .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.premium .info h3 {
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+.premium .info a {
+    background-color: var(--primario);
+    color: white;
+    width: 100%;
+    text-decoration: none;
+    padding: 1rem 0;
+    border-radius: 20px;
+    box-shadow: 0 3px 5px 2px rgba(0, 0, 0, 0.719);
+}
+
+@media (min-width: 700px) {
+    .premium .info h3 {
+        text-align: right;
+    }
+}
+
+
+/* Destinos Populares */
+
+.destinos .contenedor-cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.destinos .card {
+    position: relative;
+}
+
+.destinos .info {
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    color: white;
+    padding: 1rem;
+}
+
+
+/* Footer */
+
+.footer {
+    position: fixed;
+    bottom: -100%;
+    background-color: white;
+    width: 100%;
+    -webkit-box-shadow: 0px -20px 39px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px -20px 39px -4px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px -20px 39px -4px rgba(0, 0, 0, 0.75);
+    transition: bottom 1s;
+}
+
+.footer.footer-activo {
+    bottom: 0;
+}
+
+.nav-footer {
+    padding: 1rem;
+}
+
+.nav-footer h3 {
+    font-size: 1.2rem;
+}
+
+.nav-footer a {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--secundario);
+}
+
+.sociales ul li span {
+    display: none;
+}
+
+.sociales ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-size: 1.4rem;
+}
+
+.sociales ul li a:before {
+    font-family: "Font Awesome 5 Brands";
+}
+
+.sociales ul li a[href*='facebook.com']::before {
+    content: "\f39e";
+}
+
+.sociales ul li a[href*='twitter.com']::before {
+    content: "\f099";
+}
+
+.sociales ul li a[href*='youtube.com']::before {
+    content: "\f167";
+}
+
+.sociales ul li a[href*='instagram.com']::before {
+    content: "\f16d";
+}
+
+.sociales ul li a[href*='pinterest.com']::before {
+    content: "\f0d2";
+}
+
+
+/* Boton Flotante */
+
+.btn-flotante {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    text-decoration: none;
+    background-color: rgb(10, 70, 180);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+.btn-flotante:hover,
+.btn-flotante-activo {
+    background-color: rgb(8, 51, 131);
+}
